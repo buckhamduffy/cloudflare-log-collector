@@ -1,8 +1,8 @@
-# Cloudflare Log Collector
-
 <p align="center">
   <img src="web/static/images/logo.png" alt="cloudflare-log-collector" width="400">
 </p>
+
+# Cloudflare Log Collector
 
 [![CI](https://github.com/afreidah/cloudflare-log-collector/actions/workflows/ci.yml/badge.svg)](https://github.com/afreidah/cloudflare-log-collector/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/afreidah/cloudflare-log-collector/branch/main/graph/badge.svg)](https://codecov.io/gh/afreidah/cloudflare-log-collector)
