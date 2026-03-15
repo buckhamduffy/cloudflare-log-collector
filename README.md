@@ -1,6 +1,8 @@
 # Cloudflare Log Collector
 
-![Grafana Dashboard](docs/images/grafana.png)
+<p align="center">
+  <img src="web/static/images/logo.png" alt="cloudflare-log-collector" width="400">
+</p>
 
 [![CI](https://github.com/afreidah/cloudflare-log-collector/actions/workflows/ci.yml/badge.svg)](https://github.com/afreidah/cloudflare-log-collector/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/afreidah/cloudflare-log-collector/branch/main/graph/badge.svg)](https://codecov.io/gh/afreidah/cloudflare-log-collector)
@@ -9,6 +11,8 @@
 <p align="center">
   <strong><a href="https://cloudflare-log-collector.munchbox.cc">Project Website</a></strong>
 </p>
+
+![Grafana Dashboard](docs/images/grafana.png)
 
 A lightweight Go service that polls the Cloudflare GraphQL Analytics API for firewall events and HTTP traffic statistics, ships them into a self-hosted observability stack, and traces every poll cycle with OpenTelemetry.
 
