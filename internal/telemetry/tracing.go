@@ -15,6 +15,7 @@ import (
 	"fmt"
 
 	"github.com/afreidah/cloudflare-log-collector/internal/config"
+
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc"
