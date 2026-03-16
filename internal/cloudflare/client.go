@@ -71,6 +71,15 @@ func NewClient(apiToken string) *Client {
 	}
 }
 
+// NewTestClient creates a client pointing at a custom endpoint for testing.
+func NewTestClient(endpoint, apiToken string) *Client {
+	return &Client{
+		apiToken:   apiToken,
+		endpoint:   endpoint,
+		httpClient: &http.Client{Timeout: 5 * time.Second},
+	}
+}
+
 // -------------------------------------------------------------------------
 // RESPONSE TYPES
 // -------------------------------------------------------------------------
