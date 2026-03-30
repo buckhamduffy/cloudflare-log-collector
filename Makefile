@@ -1,15 +1,14 @@
 # -------------------------------------------------------------------------------
 # Cloudflare Log Collector - Build, Package, and Push
 #
-# Author: Alex Freidah
+# Project: Buckham Duffy
 #
-# Go-based Cloudflare analytics collector. Builds multi-arch container images
-# for deployment to the munchbox Nomad cluster.
+# Go-based Cloudflare analytics collector. Builds multi-arch container images.
 # -------------------------------------------------------------------------------
 
-REGISTRY   ?= registry.munchbox.cc
+REGISTRY   ?= ghcr.io/buckhamduffy
 IMAGE      := cloudflare-log-collector
-VERSION    ?= $(shell cat .version)
+VERSION    ?= $(shell git describe --tags --always --dirty 2>/dev/null || echo "dev")
 
 FULL_TAG   := $(REGISTRY)/$(IMAGE):$(VERSION)
 CACHE_TAG  := $(REGISTRY)/$(IMAGE):cache
