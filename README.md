@@ -4,13 +4,10 @@
 
 # Cloudflare Log Collector
 
-[![CI](https://github.com/afreidah/cloudflare-log-collector/actions/workflows/ci.yml/badge.svg)](https://github.com/afreidah/cloudflare-log-collector/actions/workflows/ci.yml)
-[![codecov](https://codecov.io/gh/afreidah/cloudflare-log-collector/branch/main/graph/badge.svg)](https://codecov.io/gh/afreidah/cloudflare-log-collector)
+[![CI](https://github.com/buckhamduffy/cloudflare-log-collector/actions/workflows/ci.yml/badge.svg)](https://github.com/buckhamduffy/cloudflare-log-collector/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-<p align="center">
-  <strong><a href="https://cloudflare-log-collector.munchbox.cc">Project Website</a></strong>
-</p>
+> **Note:** This is a fork of the [original cloudflare-log-collector](https://github.com/afreidah/cloudflare-log-collector) with added support for **account audit logs** collection.
 
 ![Grafana Dashboard](docs/images/grafana.png)
 
@@ -153,22 +150,6 @@ make push VERSION=v0.1.1
 ```
 
 Builds and pushes multi-arch images (`linux/amd64`, `linux/arm64`) to the configured registry.
-
-### Nomad
-
-The service deploys as a standard Nomad job with Vault integration for secret injection. The Nomad job template renders the config file with Cloudflare credentials from Vault at `secret/data/cloudflare`.
-
-```bash
-source munchbox-env.sh && cd nomad && make run JOB=cloudflare-log-collector
-```
-
-### Vault Secret
-
-Store at `secret/data/cloudflare`:
-
-```bash
-vault kv put secret/cloudflare api_token="<token>" zone_id="<zone_id>" zone_name="<zone_name>"
-```
 
 ## Development
 

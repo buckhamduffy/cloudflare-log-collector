@@ -1,10 +1,10 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: cloudflare-log-collector
-Upstream-Contact: Alex Freidah <alex.freidah@gmail.com>
-Source: https://github.com/afreidah/cloudflare-log-collector
+Upstream-Contact: Buckham Duffy <hello@buckhamduffy.com>
+Source: https://github.com/buckhamduffy/cloudflare-log-collector
 
 Files: *
-Copyright: 2024-2026 Alex Freidah
+Copyright: 2024-2026 Alex Freidah, 2026 Buckham Duffy
 License: MIT
 
 License: MIT

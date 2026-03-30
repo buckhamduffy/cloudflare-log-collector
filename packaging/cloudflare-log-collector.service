@@ -1,14 +1,14 @@
 # -------------------------------------------------------------------------------
 # Cloudflare Log Collector Systemd Service
 #
-# Project: Munchbox / Author: Alex Freidah
+# Project: Buckham Duffy
 #
 # Systemd unit file for cloudflare-log-collector.
 # -------------------------------------------------------------------------------
 
 [Unit]
 Description=Cloudflare Log Collector
-Documentation=https://github.com/afreidah/cloudflare-log-collector
+Documentation=https://github.com/buckhamduffy/cloudflare-log-collector
 After=network-online.target
 Wants=network-online.target
 

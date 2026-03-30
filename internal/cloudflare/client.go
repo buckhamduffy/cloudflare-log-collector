@@ -21,7 +21,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/afreidah/cloudflare-log-collector/internal/telemetry"
+	"github.com/buckhamduffy/cloudflare-log-collector/internal/telemetry"
 
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/codes"

@@ -164,12 +164,22 @@ jobs:
           push: true
           build-args: VERSION=${{ steps.version.outputs.version }}
           tags: |
-            ghcr.io/afreidah/cloudflare-log-collector:${{ steps.version.outputs.version }}
-            ghcr.io/afreidah/cloudflare-log-collector:latest
+            ghcr.io/buckhamduffy/cloudflare-log-collector:${{ steps.version.outputs.version }}
+            ghcr.io/buckhamduffy/cloudflare-log-collector:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
       - name: Scan image with Trivy
-        run: |
-          curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b /usr/local/bin
-          trivy image --exit-code 1 --severity CRITICAL,HIGH ghcr.io/afreidah/cloudflare-log-collector:${{ steps.version.outputs.version }}
+        uses: aquasecurity/trivy-action@0.35.0
+        with:
+          image-ref: ghcr.io/buckhamduffy/cloudflare-log-collector:${{ steps.version.outputs.version }}
+          format: sarif
+          output: trivy-results.sarif
+          severity: CRITICAL,HIGH
+          exit-code: 1
+
+      - name: Upload Trivy results to GitHub Security
+        uses: github/codeql-action/upload-sarif@v3
+        if: always()
+        with:
+          sarif_file: trivy-results.sarif

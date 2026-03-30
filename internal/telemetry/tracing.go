@@ -14,7 +14,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/afreidah/cloudflare-log-collector/internal/config"
+	"github.com/buckhamduffy/cloudflare-log-collector/internal/config"
 
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/attribute"
@@ -36,7 +36,7 @@ const (
 )
 
 // Version of the service for trace metadata. Set at build time via
-// -ldflags "-X github.com/afreidah/cloudflare-log-collector/internal/telemetry.Version=..."
+// -ldflags "-X github.com/buckhamduffy/cloudflare-log-collector/internal/telemetry.Version=..."
 var Version = "dev"
 
 // -------------------------------------------------------------------------

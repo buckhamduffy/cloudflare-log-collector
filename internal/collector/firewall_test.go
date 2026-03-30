@@ -19,8 +19,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/afreidah/cloudflare-log-collector/internal/cloudflare"
-	"github.com/afreidah/cloudflare-log-collector/internal/loki"
+	"github.com/buckhamduffy/cloudflare-log-collector/internal/cloudflare"
+	"github.com/buckhamduffy/cloudflare-log-collector/internal/loki"
 )
 
 // firewallTestConfig returns a CollectorConfig for firewall tests with the

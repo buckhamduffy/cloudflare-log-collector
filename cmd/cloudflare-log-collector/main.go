@@ -25,13 +25,13 @@ import (
 
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 
-	"github.com/afreidah/cloudflare-log-collector/internal/cloudflare"
-	"github.com/afreidah/cloudflare-log-collector/internal/collector"
-	"github.com/afreidah/cloudflare-log-collector/internal/config"
-	"github.com/afreidah/cloudflare-log-collector/internal/lifecycle"
-	"github.com/afreidah/cloudflare-log-collector/internal/loki"
-	"github.com/afreidah/cloudflare-log-collector/internal/metrics"
-	"github.com/afreidah/cloudflare-log-collector/internal/telemetry"
+	"github.com/buckhamduffy/cloudflare-log-collector/internal/cloudflare"
+	"github.com/buckhamduffy/cloudflare-log-collector/internal/collector"
+	"github.com/buckhamduffy/cloudflare-log-collector/internal/config"
+	"github.com/buckhamduffy/cloudflare-log-collector/internal/lifecycle"
+	"github.com/buckhamduffy/cloudflare-log-collector/internal/loki"
+	"github.com/buckhamduffy/cloudflare-log-collector/internal/metrics"
+	"github.com/buckhamduffy/cloudflare-log-collector/internal/telemetry"
 )
 
 // main is the process entry point. Loads config, initializes tracing and

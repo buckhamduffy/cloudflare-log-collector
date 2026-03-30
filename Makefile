@@ -16,7 +16,7 @@ CACHE_TAG  := $(REGISTRY)/$(IMAGE):cache
 PLATFORMS  := linux/amd64,linux/arm64
 
 # --- Go build flags ---
-GO_LDFLAGS := -s -w -X github.com/afreidah/cloudflare-log-collector/internal/telemetry.Version=$(VERSION)
+GO_LDFLAGS := -s -w -X github.com/buckhamduffy/cloudflare-log-collector/internal/telemetry.Version=$(VERSION)
 
 
 # -------------------------------------------------------------------------

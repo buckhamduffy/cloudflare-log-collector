@@ -19,9 +19,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/afreidah/cloudflare-log-collector/internal/cloudflare"
-	"github.com/afreidah/cloudflare-log-collector/internal/loki"
-	"github.com/afreidah/cloudflare-log-collector/internal/metrics"
+	"github.com/buckhamduffy/cloudflare-log-collector/internal/cloudflare"
+	"github.com/buckhamduffy/cloudflare-log-collector/internal/loki"
+	"github.com/buckhamduffy/cloudflare-log-collector/internal/metrics"
 
 	"github.com/prometheus/client_golang/prometheus"
 	io_prometheus "github.com/prometheus/client_model/go"

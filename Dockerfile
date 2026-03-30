@@ -1,7 +1,7 @@
 # -------------------------------------------------------------------------------
 # Cloudflare Log Collector - Container Image
 #
-# Author: Alex Freidah
+# Project: Buckham Duffy
 #
 # Multi-stage Alpine build. Polls Cloudflare GraphQL API for firewall events
 # and HTTP traffic, ships to Loki and Prometheus.
@@ -28,7 +28,7 @@ COPY internal/ internal/
 
 # --- Build binary (native cross-compilation, no QEMU needed) ---
 RUN CGO_ENABLED=0 GOOS=${TARGETOS} GOARCH=${TARGETARCH} go build \
-    -ldflags="-s -w -X github.com/afreidah/cloudflare-log-collector/internal/telemetry.Version=${VERSION}" \
+    -ldflags="-s -w -X github.com/buckhamduffy/cloudflare-log-collector/internal/telemetry.Version=${VERSION}" \
     -o cloudflare-log-collector ./cmd/cloudflare-log-collector
 
 # -------------------------------------------------------------------------
@@ -42,7 +42,7 @@ ARG VERSION=dev
 LABEL org.opencontainers.image.title="cloudflare-log-collector" \
       org.opencontainers.image.description="Cloudflare analytics collector for Loki and Prometheus" \
       org.opencontainers.image.version="${VERSION}" \
-      org.opencontainers.image.source="https://github.com/afreidah/cloudflare-log-collector"
+      org.opencontainers.image.source="https://github.com/buckhamduffy/cloudflare-log-collector"
 
 RUN apk add --no-cache ca-certificates && \
     adduser -D -u 10001 appuser

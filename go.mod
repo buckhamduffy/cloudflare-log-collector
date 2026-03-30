@@ -1,4 +1,4 @@
-module github.com/afreidah/cloudflare-log-collector
+module github.com/buckhamduffy/cloudflare-log-collector
 
 go 1.26.1
 

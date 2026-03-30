@@ -17,10 +17,10 @@ import (
 	"log/slog"
 	"time"
 
-	"github.com/afreidah/cloudflare-log-collector/internal/cloudflare"
-	"github.com/afreidah/cloudflare-log-collector/internal/loki"
-	"github.com/afreidah/cloudflare-log-collector/internal/metrics"
-	"github.com/afreidah/cloudflare-log-collector/internal/telemetry"
+	"github.com/buckhamduffy/cloudflare-log-collector/internal/cloudflare"
+	"github.com/buckhamduffy/cloudflare-log-collector/internal/loki"
+	"github.com/buckhamduffy/cloudflare-log-collector/internal/metrics"
+	"github.com/buckhamduffy/cloudflare-log-collector/internal/telemetry"
 
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/codes"
