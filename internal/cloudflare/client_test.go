@@ -188,7 +188,7 @@ func TestQueryAuditLogs_Success(t *testing.T) {
 				"raw": {"cf_ray_id": "ray-789", "method": "POST", "status_code": 200, "uri": "/accounts/test-account/members"},
 				"resource": {"id": "member-abc", "product": "members", "type": "member"}
 			}],
-			"result_info": {"count": "1", "cursor": ""}
+			"result_info": {"count": 1, "cursor": ""}
 		}`))
 	}))
 	t.Cleanup(ts.Close)
@@ -233,7 +233,7 @@ func TestQueryAuditLogs_Pagination(t *testing.T) {
 					{"id": "audit-1", "action": {"type": "create"}},
 					{"id": "audit-2", "action": {"type": "update"}}
 				],
-				"result_info": {"count": "2", "cursor": "next-page-cursor"}
+				"result_info": {"count": 2, "cursor": "next-page-cursor"}
 			}`))
 		case "next-page-cursor":
 			// --- Second page ---
@@ -242,7 +242,7 @@ func TestQueryAuditLogs_Pagination(t *testing.T) {
 				"result": [
 					{"id": "audit-3", "action": {"type": "delete"}}
 				],
-				"result_info": {"count": "1", "cursor": ""}
+				"result_info": {"count": 1, "cursor": ""}
 			}`))
 		}
 	}))
@@ -275,7 +275,7 @@ func TestQueryAuditLogs_EmptyResult(t *testing.T) {
 		_, _ = w.Write([]byte(`{
 			"success": true,
 			"result": [],
-			"result_info": {"count": "0", "cursor": ""}
+			"result_info": {"count": 0, "cursor": ""}
 		}`))
 	}))
 	t.Cleanup(ts.Close)
