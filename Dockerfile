@@ -3,37 +3,10 @@
 #
 # Project: Buckham Duffy
 #
-# Multi-stage Alpine build. Polls Cloudflare GraphQL API for firewall events
-# and HTTP traffic, ships to Loki and Prometheus.
+# Alpine runtime image. GoReleaser pre-builds the binary and places it in the
+# Docker build context. Polls Cloudflare GraphQL API for firewall events and
+# HTTP traffic, ships to Loki and Prometheus.
 # -------------------------------------------------------------------------------
-
-FROM --platform=$BUILDPLATFORM golang:1.26.1-alpine AS builder
-
-ARG VERSION=dev
-ARG TARGETOS
-ARG TARGETARCH
-
-WORKDIR /build
-
-# --- Install build dependencies ---
-RUN apk add --no-cache git ca-certificates
-
-# --- Copy go module files and download dependencies ---
-COPY go.mod go.sum ./
-RUN go mod download
-
-# --- Copy source code ---
-COPY cmd/ cmd/
-COPY internal/ internal/
-
-# --- Build binary (native cross-compilation, no QEMU needed) ---
-RUN CGO_ENABLED=0 GOOS=${TARGETOS} GOARCH=${TARGETARCH} go build \
-    -ldflags="-s -w -X github.com/buckhamduffy/cloudflare-log-collector/internal/telemetry.Version=${VERSION}" \
-    -o cloudflare-log-collector ./cmd/cloudflare-log-collector
-
-# -------------------------------------------------------------------------
-# Runtime Image
-# -------------------------------------------------------------------------
 
 FROM alpine:3.21
 
@@ -47,7 +20,7 @@ LABEL org.opencontainers.image.title="cloudflare-log-collector" \
 RUN apk add --no-cache ca-certificates && \
     adduser -D -u 10001 appuser
 
-COPY --from=builder /build/cloudflare-log-collector /usr/local/bin/
+COPY cloudflare-log-collector /usr/local/bin/
 
 USER appuser
 
