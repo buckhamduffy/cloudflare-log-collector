@@ -3,6 +3,17 @@
 All notable changes to this project are documented in this file.
 
 
+## [0.1.16](https://github.com/buckhamduffy/cloudflare-log-collector/compare/v0.1.15...v0.1.16) (2026-03-30)
+
+
+### Features
+
+* add account audit logs ingest ([2a6a857](https://github.com/buckhamduffy/cloudflare-log-collector/commit/2a6a857ab4ed9f835c44b28eeea77158c17f9944))
+* add multi-zone support ([a8a4c93](https://github.com/buckhamduffy/cloudflare-log-collector/commit/a8a4c93cb590f1acf455d2fec64f85870f1c9273))
+* add multi-zone support ([92fe9d8](https://github.com/buckhamduffy/cloudflare-log-collector/commit/92fe9d8b1a3522f5ceb020e62292fe93e41e168a))
+* added grafana dashboard and some code changes to make the dashboardd better.  put an image of it on the readme ([525529e](https://github.com/buckhamduffy/cloudflare-log-collector/commit/525529e3caeb31f1a001d05be389c6257bee2cde))
+* setup build pipeline ([a129c2e](https://github.com/buckhamduffy/cloudflare-log-collector/commit/a129c2e46e31546ca87a5370b3692d6df878ce74))
+
 ## [0.1.15] - 2026-03-16
 
 ### Added
